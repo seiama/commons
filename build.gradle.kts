@@ -1,11 +1,11 @@
 plugins {
   val indraVersion = "3.0.1"
-  id("com.diffplug.spotless") version "6.15.0"
+  id("com.diffplug.spotless") version "6.18.0"
   id("net.kyori.indra") version indraVersion
   id("net.kyori.indra.checkstyle") version indraVersion
   id("net.kyori.indra.publishing") version indraVersion
   id("net.kyori.indra.publishing.sonatype") version indraVersion
-  id("net.ltgt.errorprone") version "3.0.1"
+  id("net.ltgt.errorprone") version "3.1.0"
 }
 
 group = "com.seiama"
@@ -59,12 +59,11 @@ repositories {
 }
 
 dependencies {
+  annotationProcessor("ca.stellardrift:contract-validator:1.0.1")
   checkstyle("ca.stellardrift:stylecheck:0.2.0")
   errorprone("com.google.errorprone:error_prone_core:2.18.0")
-  compileOnlyApi("org.jetbrains:annotations:24.0.0")
-  testImplementation("com.google.truth:truth:1.1.3")
-  testImplementation("com.google.truth.extensions:truth-java8-extension:1.1.3")
-  testImplementation(platform("org.junit:junit-bom:5.9.2"))
+  compileOnlyApi("org.jetbrains:annotations:24.0.1")
+  testImplementation(platform("org.junit:junit-bom:5.9.3"))
   testImplementation("org.junit.jupiter:junit-jupiter-api")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
