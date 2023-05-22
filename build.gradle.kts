@@ -60,7 +60,7 @@ repositories {
 
 dependencies {
   annotationProcessor("ca.stellardrift:contract-validator:1.0.1")
-  checkstyle("ca.stellardrift:stylecheck:0.2.0")
+  checkstyle("ca.stellardrift:stylecheck:0.2.1")
   errorprone("com.google.errorprone:error_prone_core:2.18.0")
   compileOnlyApi("org.jetbrains:annotations:24.0.1")
   testImplementation(platform("org.junit:junit-bom:5.9.3"))
