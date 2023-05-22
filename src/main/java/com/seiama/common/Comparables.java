@@ -85,4 +85,34 @@ public final class Comparables {
   public static <C extends Comparable<C>> boolean lessThanOrEqual(final @NotNull C left, final @NotNull C right) {
     return left.compareTo(right) <= 0;
   }
+
+  /**
+   * Gets the minimum value.
+   *
+   * <p>If {@code left} and {@code right} are equal {@code left} will be returned.</p>
+   *
+   * @param left the left object
+   * @param right the right object
+   * @param <C> the object type
+   * @return the minimum value
+   * @since 1.0.0
+   */
+  public static <C extends Comparable<C>> @NotNull C min(final @NotNull C left, final @NotNull C right) {
+    return lessThanOrEqual(left, right) ? left : right;
+  }
+
+  /**
+   * Gets the maximum value.
+   *
+   * <p>If {@code left} and {@code right} are equal {@code left} will be returned.</p>
+   *
+   * @param left the left object
+   * @param right the right object
+   * @param <C> the object type
+   * @return the maximum value
+   * @since 1.0.0
+   */
+  public static <C extends Comparable<C>> @NotNull C max(final @NotNull C left, final @NotNull C right) {
+    return greaterThanOrEqual(left, right) ? left : right;
+  }
 }

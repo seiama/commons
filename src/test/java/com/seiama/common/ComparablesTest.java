@@ -25,6 +25,7 @@ package com.seiama.common;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -55,5 +56,17 @@ class ComparablesTest {
     assertFalse(Comparables.greaterThanOrEqual(1, 2));
     assertTrue(Comparables.greaterThanOrEqual(2, 2));
     assertTrue(Comparables.greaterThanOrEqual(3, 2));
+  }
+
+  @Test
+  void testMin() {
+    assertEquals(5, (int) Comparables.min(5, 10));
+    assertEquals(10, (int) Comparables.min(15, 10));
+  }
+
+  @Test
+  void testMax() {
+    assertEquals(10, (int) Comparables.max(5, 10));
+    assertEquals(15, (int) Comparables.max(15, 10));
   }
 }
