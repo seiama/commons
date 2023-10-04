@@ -1,6 +1,6 @@
 plugins {
-  val indraVersion = "3.1.1"
-  id("com.diffplug.spotless") version "6.19.0"
+  val indraVersion = "3.1.3"
+  id("com.diffplug.spotless") version "6.21.0"
   id("net.kyori.indra") version indraVersion
   id("net.kyori.indra.checkstyle") version indraVersion
   id("net.kyori.indra.publishing") version indraVersion
@@ -63,7 +63,7 @@ dependencies {
   checkstyle("ca.stellardrift:stylecheck:0.2.1")
   errorprone("com.google.errorprone:error_prone_core:2.19.1")
   compileOnlyApi("org.jetbrains:annotations:24.0.1")
-  testImplementation(platform("org.junit:junit-bom:5.9.3"))
+  testImplementation(platform("org.junit:junit-bom:5.10.0"))
   testImplementation("org.junit.jupiter:junit-jupiter-api")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
