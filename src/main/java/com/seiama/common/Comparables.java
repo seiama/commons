@@ -23,13 +23,14 @@
  */
 package com.seiama.common;
 
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A collection of utilities for working with {@link Comparable}.
  *
  * @since 1.0.0
  */
+@NullMarked
 public final class Comparables {
   private Comparables() {
   }
@@ -43,7 +44,7 @@ public final class Comparables {
    * @return {@code true} if {@code left} is greater than {@code right}, {@code false} otherwise
    * @since 1.0.0
    */
-  public static <C extends Comparable<C>> boolean greaterThan(final @NotNull C left, final @NotNull C right) {
+  public static <C extends Comparable<C>> boolean greaterThan(final C left, final C right) {
     return left.compareTo(right) > 0;
   }
 
@@ -56,7 +57,7 @@ public final class Comparables {
    * @return {@code true} if {@code left} is greater than or equal to {@code right}, {@code false} otherwise
    * @since 1.0.0
    */
-  public static <C extends Comparable<C>> boolean greaterThanOrEqual(final @NotNull C left, final @NotNull C right) {
+  public static <C extends Comparable<C>> boolean greaterThanOrEqual(final C left, final C right) {
     return left.compareTo(right) >= 0;
   }
 
@@ -69,7 +70,7 @@ public final class Comparables {
    * @return {@code true} if {@code left} is less than {@code right}, {@code false} otherwise
    * @since 1.0.0
    */
-  public static <C extends Comparable<C>> boolean lessThan(final @NotNull C left, final @NotNull C right) {
+  public static <C extends Comparable<C>> boolean lessThan(final C left, final C right) {
     return left.compareTo(right) < 0;
   }
 
@@ -82,7 +83,7 @@ public final class Comparables {
    * @return {@code true} if {@code left} is less than or equal to {@code right}, {@code false} otherwise
    * @since 1.0.0
    */
-  public static <C extends Comparable<C>> boolean lessThanOrEqual(final @NotNull C left, final @NotNull C right) {
+  public static <C extends Comparable<C>> boolean lessThanOrEqual(final C left, final C right) {
     return left.compareTo(right) <= 0;
   }
 
@@ -97,7 +98,7 @@ public final class Comparables {
    * @return the minimum value
    * @since 1.0.0
    */
-  public static <C extends Comparable<C>> @NotNull C min(final @NotNull C left, final @NotNull C right) {
+  public static <C extends Comparable<C>> C min(final C left, final C right) {
     return lessThanOrEqual(left, right) ? left : right;
   }
 
@@ -112,7 +113,7 @@ public final class Comparables {
    * @return the maximum value
    * @since 1.0.0
    */
-  public static <C extends Comparable<C>> @NotNull C max(final @NotNull C left, final @NotNull C right) {
+  public static <C extends Comparable<C>> C max(final C left, final C right) {
     return greaterThanOrEqual(left, right) ? left : right;
   }
 }

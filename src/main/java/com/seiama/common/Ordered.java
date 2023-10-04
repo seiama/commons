@@ -23,7 +23,7 @@
  */
 package com.seiama.common;
 
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Something that is ordered.
@@ -31,6 +31,7 @@ import org.jetbrains.annotations.NotNull;
  * @param <T> the type
  * @since 1.0.0
  */
+@NullMarked
 @SuppressWarnings("ComparableType") // allows us to be more flexible
 public interface Ordered<T> extends Comparable<T> {
   /**
@@ -40,7 +41,7 @@ public interface Ordered<T> extends Comparable<T> {
    * @return {@code true} if {@code this} is greater than {@code that}, {@code false} otherwise
    * @since 1.0.0
    */
-  default boolean greaterThan(final @NotNull T that) {
+  default boolean greaterThan(final T that) {
     return this.compareTo(that) > 0;
   }
 
@@ -51,7 +52,7 @@ public interface Ordered<T> extends Comparable<T> {
    * @return {@code true} if {@code this} is greater than or equal to {@code that}, {@code false} otherwise
    * @since 1.0.0
    */
-  default boolean noLessThan(final @NotNull T that) {
+  default boolean noLessThan(final T that) {
     return this.compareTo(that) >= 0;
   }
 
@@ -62,7 +63,7 @@ public interface Ordered<T> extends Comparable<T> {
    * @return {@code true} if {@code this} is less than {@code that}, {@code false} otherwise
    * @since 1.0.0
    */
-  default boolean lessThan(final @NotNull T that) {
+  default boolean lessThan(final T that) {
     return this.compareTo(that) < 0;
   }
 
@@ -73,7 +74,7 @@ public interface Ordered<T> extends Comparable<T> {
    * @return {@code true} if {@code this} is less than or equal to {@code that}, {@code false} otherwise
    * @since 1.0.0
    */
-  default boolean noGreaterThan(final @NotNull T that) {
+  default boolean noGreaterThan(final T that) {
     return this.compareTo(that) <= 0;
   }
 
@@ -84,7 +85,7 @@ public interface Ordered<T> extends Comparable<T> {
    * @return {@code true} if {@code this} is equal to {@code that}, {@code false} otherwise
    * @since 1.0.0
    */
-  default boolean noGreaterOrLessThan(final @NotNull T that) {
+  default boolean noGreaterOrLessThan(final T that) {
     return this.compareTo(that) == 0;
   }
 }
