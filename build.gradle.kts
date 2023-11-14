@@ -64,6 +64,7 @@ dependencies {
   errorprone("com.google.errorprone:error_prone_core:2.19.1")
   compileOnlyApi("org.jetbrains:annotations:24.0.1")
   compileOnlyApi("org.jspecify:jspecify:0.3.0")
+  testImplementation("com.google.truth.extensions:truth-java8-extension:1.1.5")
   testImplementation(platform("org.junit:junit-bom:5.10.0"))
   testImplementation("org.junit.jupiter:junit-jupiter-api")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
